@@ -13,7 +13,7 @@ import Config
 # which you typically run after static files are built.
 static_url =
   System.get_env("EDGE_URL")
-  |> Kernel.||(System.get_env("stoiven-til.herokuapp.com"))
+  |> Kernel.||(System.get_env("https://stoiven-til.herokuapp.com/"))
   |> Kernel.||("")
   |> URI.parse()
   |> Map.from_struct()
