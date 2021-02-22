@@ -16,9 +16,9 @@ alias Tilex.{Channel, Developer, Post, Repo}
 # Repo.delete_all(Channel)
 # Repo.delete_all(Developer)
 
-phoenix_channel = Repo.insert!(%Channel{name: "aws", twitter_hashtag: "aws"})
-elixir_channel = Repo.insert!(%Channel{name: "terraform", twitter_hashtag: "terraform"})
-erlang_channel = Repo.insert!(%Channel{name: "networking", twitter_hashtag: "networking"})
+aws_channel = Repo.insert!(%Channel{name: "aws", twitter_hashtag: "aws"})
+terraform_channel = Repo.insert!(%Channel{name: "terraform", twitter_hashtag: "terraform"})
+networking_channel = Repo.insert!(%Channel{name: "networking", twitter_hashtag: "networking"})
 python_channel = Repo.insert!(%Channel{name: "python", twitter_hashtag: "python"})
 devops_channel = Repo.insert!(%Channel{name: "devops", twitter_hashtag: "devops"})
 postgresql_channel = Repo.insert!(%Channel{name: "postgresql", twitter_hashtag: "postgresql"})
