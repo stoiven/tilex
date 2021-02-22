@@ -15,7 +15,7 @@ static_url =
   System.get_env("https://stoiven-til.herokuapp.com/")
   |> Kernel.||(System.get_env("stoiven-til.herokuapp.com"))
   |> Kernel.||("")
-  |> URI.parse()
+  |> URI.parse("https://stoiven-til.herokuapp.com/")
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
