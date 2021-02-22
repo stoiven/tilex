@@ -16,36 +16,10 @@ Repo.delete_all(Post)
 Repo.delete_all(Channel)
 Repo.delete_all(Developer)
 
-phoenix_channel = Repo.insert!(%Channel{name: "phoenix", twitter_hashtag: "phoenix"})
-elixir_channel = Repo.insert!(%Channel{name: "elixir", twitter_hashtag: "myelixirstatus"})
-erlang_channel = Repo.insert!(%Channel{name: "erlang", twitter_hashtag: "erlang"})
-
-developer =
-  Repo.insert!(%Developer{email: "developer@hashrocket.com", username: "rickyrocketeer"})
-
-1..100
-|> Enum.each(fn _i ->
-     Repo.insert!(%Post{
-       title: "Observing Change",
-       body: "A Gold Master Test in Practice",
-       channel: phoenix_channel,
-       developer: developer,
-       slug: Post.generate_slug()
-     })
-
-     Repo.insert!(%Post{
-       title: "Controlling Your Test Environment",
-       body: "Slow browser integration tests are a hard problem",
-       channel: elixir_channel,
-       developer: developer,
-       slug: Post.generate_slug()
-     })
-
-     Repo.insert!(%Post{
-       title: "Testing Elixir",
-       body: "A Rubyist's Journey",
-       channel: erlang_channel,
-       developer: developer,
-       slug: Post.generate_slug()
-     })
-   end)
+phoenix_channel = Repo.insert!(%Channel{name: "aws", twitter_hashtag: "aws"})
+elixir_channel = Repo.insert!(%Channel{name: "terraform", twitter_hashtag: "terraform"})
+erlang_channel = Repo.insert!(%Channel{name: "networking", twitter_hashtag: "networking"})
+python_channel = Repo.insert!(%Channel{name: "python", twitter_hashtag: "python"})
+devops_channel = Repo.insert!(%Channel{name: "devops", twitter_hashtag: "devops"})
+postgresql_channel = Repo.insert!(%Channel{name: "postgresql", twitter_hashtag: "postgresql"})
+cli_channel = Repo.insert!(%Channel{name: "command-line", twitter_hashtag: "cli"})
