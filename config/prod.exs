@@ -14,7 +14,7 @@ import Config
 static_url =
   System.get_env("EDGE_URL")
   |> Kernel.||(System.get_env("HOST"))
-  |> Kernel.||("https://stoiven-til.herokuapp.com/")
+  |> Kernel.||("https://stoiven-til.herokuapp.com")
   |> URI.parse()
   |> Map.from_struct()
 
