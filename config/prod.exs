@@ -21,8 +21,7 @@ static_url =
 config :tilex, TilexWeb.Endpoint,
   instrumenters: [Appsignal.Phoenix.Instrumenter],
   http: [port: {:system, "PORT"}, compress: true],
-  force_ssl: [rewrite_on: [:x_forwarded_proto], host: nil],
-  url: [host: "stoiven-til.herokuapp.com", port: 443, scheme: "https"],
+  url: [host: System.get_env("HOST"), port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
