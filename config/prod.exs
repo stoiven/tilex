@@ -15,7 +15,7 @@ static_url =
   System.get_env("https://stoiven-til.herokuapp.com/")
   |> Kernel.||(System.get_env("stoiven-til.herokuapp.com"))
   |> Kernel.||("")
-  |> URI.parse("https://stoiven-til.herokuapp.com/")
+  |> URI.parse()
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
@@ -24,7 +24,7 @@ config :tilex, TilexWeb.Endpoint,
   url: [host: System.get_env("stoiven-til.herokuapp.com"), port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  static_url: static_url
+  static_url: ""
 
 # Do not print debug messages in production
 config :logger, level: :info
