@@ -13,15 +13,16 @@ import Config
 # which you typically run after static files are built.
 static_url =
   System.get_env("EDGE_URL")
-  |> Kernel.||(System.get_env("https://stoiven-til.herokuapp.com/"))
-  |> Kernel.||("")
+  |> Kernel.||(System.get_env("HOST"))
+  |> Kernel.||("https://stoiven-til.herokuapp.com/")
   |> URI.parse()
   |> Map.from_struct()
 
 config :tilex, TilexWeb.Endpoint,
   instrumenters: [Appsignal.Phoenix.Instrumenter],
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: System.get_env("stoiven-til.herokuapp.com"), port: 80],
+  force_ssl: [rewrite_on: [:x_forwarded_proto], host: nil],
+  url: [host: "stoiven-til.herokuapp.com", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   static_url: static_url
