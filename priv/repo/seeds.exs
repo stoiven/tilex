@@ -12,9 +12,9 @@
 
 alias Tilex.{Channel, Developer, Post, Repo}
 
-# Repo.delete_all(Post)
-# Repo.delete_all(Channel)
-# Repo.delete_all(Developer)
+Repo.delete_all(Post)
+Repo.delete_all(Channel)
+Repo.delete_all(Developer)
 
 aws_channel = Repo.insert!(%Channel{name: "aws", twitter_hashtag: "aws"})
 terraform_channel = Repo.insert!(%Channel{name: "terraform", twitter_hashtag: "terraform"})
