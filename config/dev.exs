@@ -43,9 +43,8 @@ config :phoenix, :stacktrace_depth, 20
 config :tilex, Tilex.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  database: "tilex_dev",
-  hostname: "localhost",
-  pool_size: 10
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2"),
+  ssl: true
 
 config :tilex, :page_size, 50
 config :tilex, :cors_origin, "http://localhost:3000"

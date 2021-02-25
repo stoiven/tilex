@@ -8,7 +8,7 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           ASYNC_FEATURE_TEST: yes
-          DATE_DISPLAY_TZ: America/Chicago
+          DATE_DISPLAY_TZ: America/Los_Angeles
 
     steps:
       - checkout

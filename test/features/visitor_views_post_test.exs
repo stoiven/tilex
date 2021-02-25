@@ -49,7 +49,7 @@ defmodule VisitorViewsPostTest do
   end
 
   test "the page shows a post with the correct timezone if given", %{session: session} do
-    Application.put_env(:tilex, :date_display_tz, "America/Chicago")
+    Application.put_env(:tilex, :date_display_tz, "America/Los_Angeles")
 
     developer = Factory.insert!(:developer)
     channel = Factory.insert!(:channel, name: "command-line")
